@@ -13,9 +13,13 @@ import random
 st.set_page_config(layout="wide")
 st.title('Test Streamlit')
 
-col1, col2 = st.columns([0.3, 0.7], border=True)
-with col1.container():
-    st.write("Container 1 @ Column 1")
+con1 = st.container()
+for col in con1.columns([1, 2, 3, 4], border=True):
+    col.write("Hello World!")
 
-cc2 = col2.container(height=150)
-cc2.write("Container 2 @ Column 2")
+con2 = st.container(height=100)
+cc2_1, cc2_2, cc2_3, cc2_4 = con2.columns(4)
+cc2_1.write("Column 5 @ Container 2")
+cc2_2.write("Column 6 @ Container 2")
+cc2_3.write("Column 7 @ Container 2")
+cc2_4.write("Column 8 @ Container 2")

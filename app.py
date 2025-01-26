@@ -13,15 +13,12 @@ import pandas as pd
 st.set_page_config(layout="wide")
 st.title('Test Streamlit')
 
-username_input = st.text_input(
-    "Username: ",
-    value="???????"
-)
+result1 = st.button("click me1!")
+if result1:
+    st.write('you click on 1')
 
-password_input = st.text_input(
-    "Password: ",
-    type="password",
-    placeholder="pls give password"
-)
+result2 = st.button("click me2!", type="tertiary")
+if result1 & result2:
+    st.write('you click both')
 
-st.write(username_input, password_input)
+st.button("Reset", type="primary")

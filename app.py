@@ -8,22 +8,20 @@ Original file is located at
 """
 
 import streamlit as st
-import random
+import pandas as pd
+
+df = pd.DataFrame(
+    {
+        "first column": [1, 2, 3, 4],
+        "second column": [10, 20, 30, 40]
+    }
+)
 
 st.set_page_config(layout="wide")
 st.title('Test Streamlit')
 
 st.write('Hello World!')
 
-st.sidebar.title('Filter')
-st.sidebar.header('Option')
-st.sidebar.selectbox(
-    "Pls Select One!",
-    ('opt1', 'opt2', 'opt3')
-)
+st.write("1 + 1 = ", 2)
 
-with st.sidebar:
-    st.radio(
-        "Pls Choose One!",
-        ['cho1', 'cho2', 'cho3'],
-    )
+st.write(df)

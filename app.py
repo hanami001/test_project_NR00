@@ -13,12 +13,9 @@ import random
 st.set_page_config(layout="wide")
 st.title('Test Streamlit')
 
-with st.container():
-    st.write("MMMMMMM")
+col1, col2 = st.columns([0.3, 0.7], border=True)
+with col1.container():
+    st.write("Container 1 @ Column 1")
 
-container = st.container(border=True)
-container.write("NNNNNNN")
-container.write("TUI")
-
-container = st.container(border=True)
-container.write("NATTHAKORN")
+cc2 = col2.container(height=150)
+cc2.write("Container 2 @ Column 2")

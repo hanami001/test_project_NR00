@@ -10,18 +10,18 @@ Original file is located at
 import streamlit as st
 import pandas as pd
 
-df = pd.DataFrame(
-    {
-        "first column": [1, 2, 3, 4],
-        "second column": [10, 20, 30, 40]
-    }
-)
-
 st.set_page_config(layout="wide")
 st.title('Test Streamlit')
 
-st.write('Hello World!')
+username_input = st.text_input(
+    "Username: ",
+    value="???????"
+)
 
-st.write("1 + 1 = ", 2)
+password_input = st.text_input(
+    "Password: ",
+    type="password",
+    placeholder="pls give password"
+)
 
-st.write(df)
+st.write(username_input, password_input)
